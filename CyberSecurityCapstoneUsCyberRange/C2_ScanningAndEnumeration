@@ -1,0 +1,19 @@
+BANNER GRABBING
+service postgresql start
+msfconsole
+db_nmap -sV --script=banner <target IP>
+db_nmap -Pn -p 80,8484,8585,9200,139,137 -sV --script=banner <target IP>
+services
+BANNER GRABBING WITH CURL WGET NETCAT
+curl -s -I http://target.example.com | grep -e "Server: "
+curl --head http://target.example.com
+wget -q -S target.example.com
+nc -h
+nc -nv <target IP> 22
+nc -nv <target IP> 21
+DISCOVERING LISTENING PORTS WITH NETSTAT
+netstat -l
+netstat -l -u
+netstat -l | grep ssh
+netstat -l | grep rdp
+netstat -l | grep 21
