@@ -1,0 +1,7 @@
+service postgresql start
+msfdb init
+msfconsole
+db_status
+workspace --add MyWorkSpace
+workspace
+nmap -sS -Pn -v -p 22
